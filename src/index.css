@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    background:
+      radial-gradient(ellipse 80% 50% at 10% -10%, rgba(42, 157, 143, 0.12), transparent 50%),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(96, 165, 250, 0.08), transparent 45%),
+      #0b1220;
+    color: #f1f5f9;
+  }
+
+  ::selection {
+    background: rgba(42, 157, 143, 0.35);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f1729;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #243047;
+    border-radius: 999px;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-navy-500/80 bg-navy-800/90 shadow-panel;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold tracking-tight text-white;
+  }
+
+  .muted {
+    @apply text-sm text-slate-400;
+  }
+
+  .label {
+    @apply text-xs font-medium uppercase tracking-wider text-slate-500;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-300 transition-colors hover:bg-navy-600/70 hover:text-white;
+  }
+
+  .nav-link-active {
+    @apply bg-teal-500/15 text-teal-400 ring-1 ring-inset ring-teal-500/30;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue/60 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-teal-500 text-navy-950 hover:bg-teal-400;
+  }
+
+  .btn-secondary {
+    @apply btn border border-navy-500 bg-navy-700 text-slate-100 hover:bg-navy-600;
+  }
+
+  .btn-danger {
+    @apply btn border border-red-500/30 bg-red-500/10 text-red-300 hover:bg-red-500/20;
+  }
+
+  .data-table {
+    @apply w-full overflow-hidden rounded-lg border border-navy-500;
+  }
+
+  .data-table th {
+    @apply bg-navy-700/80 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400;
+  }
+
+  .data-table td {
+    @apply border-t border-navy-500/70 px-4 py-3 text-sm text-slate-200;
+  }
+
+  .data-table tr:hover td {
+    @apply bg-navy-700/40;
+  }
+}
